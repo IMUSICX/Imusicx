@@ -270,6 +270,7 @@ class YouTubeStateController extends ChangeNotifier {
     this.recommendation = track.trackId!;
     try {
       this.recommendations = await track.recommendations;
+      // ignore: todo
       // TODO (alexmercerind): Sometimes recommendations are not fetched & we're stuck so retrying is the best option for now. Improve in future.
       if (this.recommendations.length == 1) {
         this.recommendations = await track.recommendations;

@@ -50,6 +50,7 @@ class CollectionSearchState extends State<CollectionSearch> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: todo
     /// TODO: These elements get added to a [List] for rendering.
     /// But their dimensions do not get recalculated because they are now part of mutable list.
     /// Thus, overflow happens if someone resizes the window. Unlike other tabs.
@@ -84,9 +85,11 @@ class CollectionSearchState extends State<CollectionSearch> {
                   Expanded(
                     child: Focus(
                       onFocusChange: (hasFocus) {
-                        if(hasFocus) {
+                        if (hasFocus) {
                           HotKeys.disableSpaceHotKey();
-                        }else{HotKeys.enableSpaceHotKey();}
+                        } else {
+                          HotKeys.enableSpaceHotKey();
+                        }
                       },
                       child: TextField(
                         autofocus: Platform.isWindows ||
@@ -183,7 +186,8 @@ class CollectionSearchState extends State<CollectionSearch> {
                           child: Icon(
                             FluentIcons.search_20_regular,
                             size: 72.0,
-                            color: Theme.of(context).iconTheme.color,
+                            // color: Theme.of(context).iconTheme.color,
+                            color: Colors.red,
                           ),
                         )
                       : Center(

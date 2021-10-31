@@ -53,8 +53,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/about_header.jpg
-    - assets/images/default_album_art.jpg
+    - assets/images/
+    - assets/images/
     - assets/translations/de_DE.json
     - assets/translations/en_US.json
     - assets/translations/fr_FR.json
@@ -84,8 +84,8 @@ flutter:
 
 msix_config:
   msix_version: 0.1.9.0
-  display_name: Harmonoid
-  identity_name: com.alexmercerind.harmonoid
+  display_name: IMUSICX
+  # identity_name: com.alexmercerind.harmonoid
   file_extension: ogg, ogx, aac, m4a, mp3, wma, wav, aiff, flac, opus
   icons_background_color: transparent
   architecture: x64

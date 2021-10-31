@@ -25,7 +25,7 @@ import 'package:harmonoid/utils/widgets.dart';
 import 'package:harmonoid/core/collection.dart';
 import 'package:harmonoid/core/configuration.dart';
 import 'package:harmonoid/interface/changenotifiers.dart';
-import 'package:harmonoid/interface/harmonoid.dart';
+import 'package:harmonoid/interface/imusicx.dart';
 
 abstract class Utils {
   static Future<void> handleYouTubeFailure() async {

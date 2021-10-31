@@ -221,7 +221,8 @@ class LeadingCollectionAlbumTile extends StatelessWidget {
               borderRadius: BorderRadius.circular(8.0),
               color: Theme.of(context).cardColor,
             ),
-            width: MediaQuery.of(context).size.width.normalized - 16,
+            // width: MediaQuery.of(context).size.width.normalized - 16,
+            width: MediaQuery.of(context).size.width * 0.8,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -243,14 +244,20 @@ class LeadingCollectionAlbumTile extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        Provider.of<Collection>(context, listen: false)
-                            .lastAlbum!
-                            .albumName!,
-                        style: Theme.of(context).textTheme.headline1,
-                        textAlign: TextAlign.start,
-                        maxLines: 2,
+                    children: <Widget>[
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        child: Flexible(
+                          child: new Text(
+                            Provider.of<Collection>(context, listen: false)
+                                .lastAlbum!
+                                .albumName!,
+                            style: Theme.of(context).textTheme.headline2,
+                            textAlign: TextAlign.left,
+                            maxLines: 3,
+                            overflow: TextOverflow.clip,
+                          ),
+                        ),
                       ),
                       Text(
                         Provider.of<Collection>(context, listen: false)
@@ -306,7 +313,8 @@ class CollectionAlbum extends StatelessWidget {
                 ),
                 Text(
                   language!.STRING_ALBUM_SINGLE,
-                  style: Theme.of(context).textTheme.headline1,
+                  style: Theme.of(context).textTheme.headline2,
+                  textAlign: TextAlign.center,
                 )
               ],
             ),

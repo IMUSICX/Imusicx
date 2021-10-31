@@ -9,7 +9,7 @@ import 'package:harmonoid/interface/home.dart';
 
 GlobalKey<NavigatorState> key = GlobalKey<NavigatorState>();
 
-class Harmonoid extends StatelessWidget {
+class Hormonoid1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<Visuals>(

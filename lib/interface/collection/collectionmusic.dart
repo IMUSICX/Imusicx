@@ -37,6 +37,7 @@ import 'package:harmonoid/interface/changenotifiers.dart';
 import 'package:harmonoid/interface/collection/collectionsearch.dart';
 import 'package:harmonoid/interface/settings/settings.dart';
 import 'package:harmonoid/utils/widgets.dart';
+import 'package:harmonoid/constants/constant.dart';
 
 class CollectionMusic extends StatefulWidget {
   const CollectionMusic({Key? key}) : super(key: key);
@@ -46,6 +47,7 @@ class CollectionMusic extends StatefulWidget {
 class CollectionMusicState extends State<CollectionMusic>
     with AutomaticKeepAliveClientMixin {
   int index = 0;
+  Color coulor = Colors.red;
 
   @override
   bool get wantKeepAlive => true;
@@ -137,7 +139,7 @@ class CollectionMusicState extends State<CollectionMusic>
                                           : FontWeight.w300,
                                       color: (Theme.of(context).brightness ==
                                                   Brightness.dark
-                                              ? Colors.white
+                                              ? coulor
                                               : Colors.black)
                                           .withOpacity(
                                               this.index == 1 ? 1.0 : 0.67),
@@ -226,33 +228,33 @@ class CollectionMusicState extends State<CollectionMusic>
                                   ),
                                 ),
                               ),
-                              InkWell(
-                                borderRadius: BorderRadius.circular(8.0),
-                                onTap: () =>
-                                    this.setState(() => this.index = 5),
-                                child: Container(
-                                  height: 40.0,
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 4.0),
-                                  alignment: Alignment.center,
-                                  margin: EdgeInsets.symmetric(horizontal: 8.0),
-                                  child: Text(
-                                    'YouTube'.toUpperCase(),
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                      fontWeight: this.index == 5
-                                          ? FontWeight.w600
-                                          : FontWeight.w300,
-                                      color: (Theme.of(context).brightness ==
-                                                  Brightness.dark
-                                              ? Colors.white
-                                              : Colors.black)
-                                          .withOpacity(
-                                              this.index == 5 ? 1.0 : 0.67),
-                                    ),
-                                  ),
-                                ),
-                              ),
+                              // InkWell(
+                              //   borderRadius: BorderRadius.circular(8.0),
+                              //   onTap: () =>
+                              //       this.setState(() => this.index = 5),
+                              //   child: Container(
+                              //     height: 40.0,
+                              //     padding:
+                              //         EdgeInsets.symmetric(horizontal: 4.0),
+                              //     alignment: Alignment.center,
+                              //     margin: EdgeInsets.symmetric(horizontal: 8.0),
+                              //     child: Text(
+                              //       'YouTube'.toUpperCase(),
+                              //       style: TextStyle(
+                              //         fontSize: 20.0,
+                              //         fontWeight: this.index == 5
+                              //             ? FontWeight.w600
+                              //             : FontWeight.w300,
+                              //         color: (Theme.of(context).brightness ==
+                              //                     Brightness.dark
+                              //                 ? Colors.white
+                              //                 : Colors.black)
+                              //             .withOpacity(
+                              //                 this.index == 5 ? 1.0 : 0.67),
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ),
                             ],
                           ),
                         ),
@@ -346,56 +348,77 @@ class CollectionMusicState extends State<CollectionMusic>
                             scrollDirection: Axis.horizontal,
                             shrinkWrap: true,
                             children: [
-                              InkWell(
-                                borderRadius: BorderRadius.circular(8.0),
-                                onTap: () =>
-                                    this.setState(() => this.index = 0),
-                                child: Container(
-                                  height: 40.0,
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 4.0),
-                                  alignment: Alignment.center,
-                                  margin: EdgeInsets.symmetric(horizontal: 8.0),
-                                  child: Text(
-                                    language!.STRING_ALBUM.toUpperCase(),
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                      fontWeight: this.index == 0
-                                          ? FontWeight.w600
-                                          : FontWeight.w300,
-                                      color: (Theme.of(context).brightness ==
-                                                  Brightness.dark
-                                              ? Colors.white
-                                              : Colors.black)
-                                          .withOpacity(
-                                              this.index == 0 ? 1.0 : 0.67),
+                              Expanded(
+                                flex: 1,
+                                child: InkWell(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  onTap: () => setState(() {
+                                    this.index = 0;
+
+                                    coulor = kcolor;
+                                  }),
+
+                                  // this.setState(() => this.index = 0
+                                  // ),
+                                  highlightColor: Colors.blue,
+                                  splashColor: Colors.blue[100],
+                                  child: Container(
+                                    // color: coulor,
+                                    height: 40.0,
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 4.0),
+                                    alignment: Alignment.center,
+                                    margin:
+                                        EdgeInsets.symmetric(horizontal: 8.0),
+                                    child: Text(
+                                      // language!.STRING_ALBUM.toUpperCase(),
+                                      'Albums',
+                                      style: TextStyle(
+                                        fontSize: 20.0,
+                                        fontWeight: this.index == 0
+                                            ? FontWeight.w600
+                                            : FontWeight.w300,
+                                        color: (Theme.of(context).brightness ==
+                                                    Brightness.dark
+                                                ? coulor
+                                                : Colors.black)
+                                            .withOpacity(
+                                                this.index == 0 ? 1.0 : 1),
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                              InkWell(
-                                borderRadius: BorderRadius.circular(8.0),
-                                onTap: () =>
-                                    this.setState(() => this.index = 1),
-                                child: Container(
-                                  height: 40.0,
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 4.0),
-                                  alignment: Alignment.center,
-                                  margin: EdgeInsets.symmetric(horizontal: 8.0),
-                                  child: Text(
-                                    language!.STRING_TRACK.toUpperCase(),
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                      fontWeight: this.index == 1
-                                          ? FontWeight.w600
-                                          : FontWeight.w300,
-                                      color: (Theme.of(context).brightness ==
-                                                  Brightness.dark
-                                              ? Colors.white
-                                              : Colors.black)
-                                          .withOpacity(
-                                              this.index == 1 ? 1.0 : 0.67),
+                              Expanded(
+                                flex: 1,
+                                child: InkWell(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  onTap: () =>
+                                      this.setState(() => this.index = 1),
+                                  highlightColor: Colors.blue,
+                                  splashColor: Colors.blue[100],
+                                  child: Container(
+                                    height: 40.0,
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 4.0),
+                                    alignment: Alignment.center,
+                                    margin:
+                                        EdgeInsets.symmetric(horizontal: 8.0),
+                                    child: Text(
+                                      // language!.STRING_TRACK.toUpperCase(),
+                                      'Tracks',
+                                      style: TextStyle(
+                                        fontSize: 20.0,
+                                        fontWeight: this.index == 1
+                                            ? FontWeight.w600
+                                            : FontWeight.w300,
+                                        color: (Theme.of(context).brightness ==
+                                                    Brightness.dark
+                                                ? Colors.red
+                                                : Colors.black)
+                                            .withOpacity(
+                                                this.index == 1 ? 1.0 : 1),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -404,6 +427,8 @@ class CollectionMusicState extends State<CollectionMusic>
                                 borderRadius: BorderRadius.circular(8.0),
                                 onTap: () =>
                                     this.setState(() => this.index = 2),
+                                highlightColor: Colors.blue,
+                                splashColor: Colors.blue[100],
                                 child: Container(
                                   height: 40.0,
                                   padding:
@@ -411,7 +436,8 @@ class CollectionMusicState extends State<CollectionMusic>
                                   alignment: Alignment.center,
                                   margin: EdgeInsets.symmetric(horizontal: 8.0),
                                   child: Text(
-                                    language!.STRING_ARTIST.toUpperCase(),
+                                    // language!.STRING_ARTIST.toUpperCase(),
+                                    'Artists',
                                     style: TextStyle(
                                       fontSize: 20.0,
                                       fontWeight: this.index == 2
@@ -419,10 +445,10 @@ class CollectionMusicState extends State<CollectionMusic>
                                           : FontWeight.w300,
                                       color: (Theme.of(context).brightness ==
                                                   Brightness.dark
-                                              ? Colors.white
+                                              ? Colors.red
                                               : Colors.black)
                                           .withOpacity(
-                                              this.index == 2 ? 1.0 : 0.67),
+                                              this.index == 2 ? 1.0 : 1),
                                     ),
                                   ),
                                 ),
@@ -431,6 +457,10 @@ class CollectionMusicState extends State<CollectionMusic>
                                 borderRadius: BorderRadius.circular(8.0),
                                 onTap: () =>
                                     this.setState(() => this.index = 4),
+                                highlightColor: Colors.blue,
+                                splashColor: Colors.blue[100],
+                                // hoverColor: Colors.amber,
+                                // focusColor: Colors.deepOrangeAccent,
                                 child: Container(
                                   height: 40.0,
                                   padding:
@@ -438,7 +468,8 @@ class CollectionMusicState extends State<CollectionMusic>
                                   alignment: Alignment.center,
                                   margin: EdgeInsets.symmetric(horizontal: 8.0),
                                   child: Text(
-                                    language!.STRING_SEARCH.toUpperCase(),
+                                    // language!.STRING_SEARCH.toUpperCase(),
+                                    'Search',
                                     style: TextStyle(
                                       fontSize: 20.0,
                                       fontWeight: this.index == 4
@@ -446,10 +477,10 @@ class CollectionMusicState extends State<CollectionMusic>
                                           : FontWeight.w300,
                                       color: (Theme.of(context).brightness ==
                                                   Brightness.dark
-                                              ? Colors.white
+                                              ? Colors.red
                                               : Colors.black)
                                           .withOpacity(
-                                              this.index == 4 ? 1.0 : 0.67),
+                                              this.index == 4 ? 1.0 : 1),
                                     ),
                                   ),
                                 ),
@@ -458,6 +489,8 @@ class CollectionMusicState extends State<CollectionMusic>
                                 borderRadius: BorderRadius.circular(8.0),
                                 onTap: () =>
                                     this.setState(() => this.index = 3),
+                                highlightColor: Colors.blue,
+                                splashColor: Colors.blue[100],
                                 child: Container(
                                   height: 40.0,
                                   padding:
@@ -465,7 +498,8 @@ class CollectionMusicState extends State<CollectionMusic>
                                   alignment: Alignment.center,
                                   margin: EdgeInsets.symmetric(horizontal: 8.0),
                                   child: Text(
-                                    language!.STRING_PLAYLISTS.toUpperCase(),
+                                    // language!.STRING_PLAYLISTS.toUpperCase(),
+                                    'Playlists',
                                     style: TextStyle(
                                       fontSize: 20.0,
                                       fontWeight: this.index == 3
@@ -473,83 +507,83 @@ class CollectionMusicState extends State<CollectionMusic>
                                           : FontWeight.w300,
                                       color: (Theme.of(context).brightness ==
                                                   Brightness.dark
-                                              ? Colors.white
+                                              ? Colors.red
                                               : Colors.black)
                                           .withOpacity(
-                                              this.index == 3 ? 1.0 : 0.67),
+                                              this.index == 3 ? 1.0 : 1),
                                     ),
                                   ),
                                 ),
                               ),
-                              InkWell(
-                                borderRadius: BorderRadius.circular(8.0),
-                                onTap: () =>
-                                    this.setState(() => this.index = 5),
-                                child: Container(
-                                  height: 40.0,
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 4.0),
-                                  alignment: Alignment.center,
-                                  margin: EdgeInsets.symmetric(horizontal: 8.0),
-                                  child: Text(
-                                    'YouTube'.toUpperCase(),
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                      fontWeight: this.index == 5
-                                          ? FontWeight.w600
-                                          : FontWeight.w300,
-                                      color: (Theme.of(context).brightness ==
-                                                  Brightness.dark
-                                              ? Colors.white
-                                              : Colors.black)
-                                          .withOpacity(
-                                              this.index == 5 ? 1.0 : 0.67),
-                                    ),
-                                  ),
-                                ),
-                              ),
+                              // InkWell(
+                              //   borderRadius: BorderRadius.circular(8.0),
+                              //   onTap: () =>
+                              //       this.setState(() => this.index = 5),
+                              //   child: Container(
+                              //     height: 40.0,
+                              //     padding:
+                              //         EdgeInsets.symmetric(horizontal: 4.0),
+                              //     alignment: Alignment.center,
+                              //     margin: EdgeInsets.symmetric(horizontal: 8.0),
+                              //     child: Text(
+                              //       'YouTube'.toUpperCase(),
+                              //       style: TextStyle(
+                              //         fontSize: 20.0,
+                              //         fontWeight: this.index == 5
+                              //             ? FontWeight.w600
+                              //             : FontWeight.w300,
+                              //         color: (Theme.of(context).brightness ==
+                              //                     Brightness.dark
+                              //                 ? Colors.white
+                              //                 : Colors.black)
+                              //             .withOpacity(
+                              //                 this.index == 5 ? 1.0 : 0.67),
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ),
                               SizedBox(
                                 width: 8.0,
                               ),
-                              Container(
-                                padding: EdgeInsets.symmetric(vertical: 2.0),
-                                child: ContextMenuButton<CollectionSort>(
-                                  offset: Offset.fromDirection(pi / 2, 64.0),
-                                  icon: Icon(
-                                    FluentIcons.more_vertical_20_regular,
-                                    size: 20.0,
-                                  ),
-                                  elevation: 0.0,
-                                  onSelected: (value) async {
-                                    Provider.of<Collection>(context,
-                                            listen: false)
-                                        .sort(type: value);
-                                    await configuration.save(
-                                      collectionSortType: value,
-                                    );
-                                  },
-                                  itemBuilder: (context) => [
-                                    PopupMenuItem(
-                                      value: CollectionSort.dateAdded,
-                                      child: Text(
-                                        language!.STRING_DATE_ADDED,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline4,
-                                      ),
-                                    ),
-                                    PopupMenuItem(
-                                      value: CollectionSort.aToZ,
-                                      child: Text(
-                                        language!.STRING_A_TO_Z,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline4,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              // Container(
+                              //   padding: EdgeInsets.symmetric(vertical: 2.0),
+                              //   child: ContextMenuButton<CollectionSort>(
+                              //     offset: Offset.fromDirection(pi / 2, 64.0),
+                              //     icon: Icon(
+                              //       FluentIcons.more_vertical_20_regular,
+                              //       size: 20.0,
+                              //     ),
+                              //     elevation: 0.0,
+                              //     onSelected: (value) async {
+                              //       Provider.of<Collection>(context,
+                              //               listen: false)
+                              //           .sort(type: value);
+                              //       await configuration.save(
+                              //         collectionSortType: value,
+                              //       );
+                              //     },
+                              //     itemBuilder: (context) => [
+                              //       PopupMenuItem(
+                              //         value: CollectionSort.dateAdded,
+                              //         child: Text(
+                              //           language!.STRING_DATE_ADDED,
+                              //           style: Theme.of(context)
+                              //               .textTheme
+                              //               .headline4,
+                              //         ),
+                              //       ),
+                              //       PopupMenuItem(
+                              //         value: CollectionSort.aToZ,
+                              //         child: Text(
+                              //           language!.STRING_A_TO_Z,
+                              //           style: Theme.of(context)
+                              //               .textTheme
+                              //               .headline4,
+                              //         ),
+                              //       ),
+                              //     ],
+                              //   ),
+                              // ),
                               SizedBox(
                                 width: 8.0,
                               ),

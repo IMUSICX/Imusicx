@@ -23,6 +23,10 @@ class AccentState extends State<AccentSetting> with TickerProviderStateMixin {
         builder: (context, visuals, _) => Column(
           children: [
             /*
+            // ignore: todo
+            // ignore: todo
+            // ignore: todo
+            // ignore: todo
             // TODO: Re-implement automatic accent colors using Provider.
              SwitchListTile(
                value: configuration.automaticAccent!,

@@ -38,6 +38,12 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+     dexOptions {
+
+   javaMaxHeapSize "4g"
+
+   }
+
     lintOptions {
         disable 'InvalidPackage'
     }

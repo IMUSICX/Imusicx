@@ -41,13 +41,14 @@ class VersionState extends State<VersionSetting> {
               TableRow(
                 children: [
                   Text(language!.STRING_SETTING_APP_VERSION_INSTALLED),
-                  Text('v' + VERSION),
+                  // Text('v' + VERSION),
+                  Text('v' + 1.0.toString())
                 ],
               ),
-              TableRow(children: [
-                Text(language!.STRING_SETTING_APP_VERSION_LATEST),
-                Text(this.version ?? language!.STRING_NO_INTERNET_TITLE),
-              ]),
+              // TableRow(children: [
+              //   Text(language!.STRING_SETTING_APP_VERSION_LATEST),
+              //   Text(this.version ?? language!.STRING_NO_INTERNET_TITLE),
+              // ]),
             ],
           ),
         ],
@@ -56,15 +57,29 @@ class VersionState extends State<VersionSetting> {
       actions: this.version == 'v' + VERSION
           ? null
           : [
-              MaterialButton(
-                onPressed: () =>
-                    launch('https://github.com/harmonoid/harmonoid/releases'),
-                child: Text(
-                  language!.STRING_DOWNLOAD_UPDATE,
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.secondary,
+              Column(
+                children: <Widget>[
+                  MaterialButton(
+                    onPressed: () => launch('https://github.com/Raj0408'),
+                    child: Text(
+                      // language!.STRING_DOWNLOAD_UPDATE,
+                      'RAJ KANERIYA',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
+                    ),
                   ),
-                ),
+                  MaterialButton(
+                    onPressed: () => launch('https://github.com/Bhavin230'),
+                    child: Text(
+                      // language!.STRING_DOWNLOAD_UPDATE,
+                      'BHAVIN KHUNT',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
     );

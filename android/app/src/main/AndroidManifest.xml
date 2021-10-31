@@ -1,4 +1,6 @@
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
     package="com.alexmercerind.harmonoid">
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -11,10 +13,12 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
+       
+
         android:usesCleartextTraffic="true"
         android:requestLegacyExternalStorage="true"
         android:name="io.flutter.app.FlutterApplication"
-        android:label="Harmonoid"
+        android:label="Imusicx"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

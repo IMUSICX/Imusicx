@@ -31,30 +31,30 @@ class LanguageRegion {
     translator: 'alexmercerind',
     github: 'https://github.com/alexmercerind',
   );
-  static const ruRu = LanguageRegion(
-    code: 'ru',
-    countryCode: 'RU',
-    name: 'Русский',
-    country: 'Россия',
-    translator: 'raitonoberu',
-    github: 'https://github.com/raitonoberu',
-  );
-  static const slSi = LanguageRegion(
-    code: 'sl',
-    countryCode: 'SI',
-    name: 'slovenščina',
-    country: 'Slovenija',
-    translator: 'mytja',
-    github: 'https://github.com/mytja',
-  );
-  static const ptBr = LanguageRegion(
-    code: 'pt',
-    countryCode: 'BR',
-    name: 'Português',
-    country: 'Brasil',
-    translator: 'bdlukaa',
-    github: 'https://github.com/bdlukaa',
-  );
+  // static const ruRu = LanguageRegion(
+  //   code: 'ru',
+  //   countryCode: 'RU',
+  //   name: 'Русский',
+  //   country: 'Россия',
+  //   translator: 'raitonoberu',
+  //   github: 'https://github.com/raitonoberu',
+  // );
+  // static const slSi = LanguageRegion(
+  //   code: 'sl',
+  //   countryCode: 'SI',
+  //   name: 'slovenščina',
+  //   country: 'Slovenija',
+  //   translator: 'mytja',
+  //   github: 'https://github.com/mytja',
+  // );
+  // static const ptBr = LanguageRegion(
+  //   code: 'pt',
+  //   countryCode: 'BR',
+  //   name: 'Português',
+  //   country: 'Brasil',
+  //   translator: 'bdlukaa',
+  //   github: 'https://github.com/bdlukaa',
+  // );
   static const hiIn = LanguageRegion(
     code: 'hi',
     countryCode: 'IN',
@@ -63,66 +63,66 @@ class LanguageRegion {
     translator: 'alexmercerind',
     github: 'https://github.com/alexmercerind',
   );
-  static const deDe = LanguageRegion(
-      code: 'de',
-      countryCode: 'DE',
-      name: 'Deutsche',
-      country: 'Deutschland',
-      translator: 'MickLesk',
-      github: 'https://github.com/MickLesk');
-  static const nlNl = LanguageRegion(
-    code: 'nl',
-    countryCode: 'NL',
-    name: 'Nederlands',
-    country: 'Nederland',
-    translator: 'kebabinjeneus',
-    github: 'https://github.com/kebabinjeneus',
-  );
-  static const svSe = LanguageRegion(
-    code: 'sv',
-    countryCode: 'Se',
-    name: 'Svenska',
-    country: 'Sverige',
-    translator: 'Max Haureus',
-    github: '',
-  );
-  static const frFr = LanguageRegion(
-    code: 'fr',
-    countryCode: 'FR',
-    name: 'Français',
-    country: 'France',
-    translator: 'Gaetan Jonathan',
-    github: 'https://github.com/gaetan1903',
-  );
-  static const huHu = LanguageRegion(
-    code: 'hu',
-    countryCode: 'HU',
-    name: 'Magyar',
-    country: 'Magyarország',
-    translator: 'RedyAu',
-    github: 'https://github.com/RedyAu',
-  );
-  static const mg = LanguageRegion(
-    code: 'mg',
-    countryCode: 'MG',
-    name: 'Malagasy',
-    country: 'Madagascar',
-    translator: 'Dominick',
-    github: 'https://github.com/c3k4ah',
-  );
+  // static const deDe = LanguageRegion(
+  //     code: 'de',
+  //     countryCode: 'DE',
+  //     name: 'Deutsche',
+  //     country: 'Deutschland',
+  //     translator: 'MickLesk',
+  //     github: 'https://github.com/MickLesk');
+  // static const nlNl = LanguageRegion(
+  //   code: 'nl',
+  //   countryCode: 'NL',
+  //   name: 'Nederlands',
+  //   country: 'Nederland',
+  //   translator: 'kebabinjeneus',
+  //   github: 'https://github.com/kebabinjeneus',
+  // );
+  // static const svSe = LanguageRegion(
+  //   code: 'sv',
+  //   countryCode: 'Se',
+  //   name: 'Svenska',
+  //   country: 'Sverige',
+  //   translator: 'Max Haureus',
+  //   github: '',
+  // );
+  // static const frFr = LanguageRegion(
+  //   code: 'fr',
+  //   countryCode: 'FR',
+  //   name: 'Français',
+  //   country: 'France',
+  //   translator: 'Gaetan Jonathan',
+  //   github: 'https://github.com/gaetan1903',
+  // );
+  // static const huHu = LanguageRegion(
+  //   code: 'hu',
+  //   countryCode: 'HU',
+  //   name: 'Magyar',
+  //   country: 'Magyarország',
+  //   translator: 'RedyAu',
+  //   github: 'https://github.com/RedyAu',
+  // );
+  // static const mg = LanguageRegion(
+  //   code: 'mg',
+  //   countryCode: 'MG',
+  //   name: 'Malagasy',
+  //   country: 'Madagascar',
+  //   translator: 'Dominick',
+  //   github: 'https://github.com/c3k4ah',
+  // );
 
   static const values = <LanguageRegion?>[
     enUs,
-    ruRu,
-    slSi,
-    ptBr,
+    // ruRu,
+    // slSi,
+    // ptBr,
     hiIn,
-    deDe,
-    nlNl,
-    svSe,
-    frFr,
-    huHu,
-    mg
+    // deDe,
+    // nlNl,
+    // svSe,
+    // frFr,
+    // huHu,
+    // mg
   ];
 
   int get index => values.indexOf(this);

@@ -393,6 +393,7 @@ void onTrackChange() {
       if (nowPlaying.index != index)
         lyrics.fromName(track.trackName! + ' ' + track.albumArtistName!);
     } catch (exception) {}
+    // ignore: todo
     // TODO (alexmercerind): SMTC only working on Windows.
     if (Platform.isWindows) {
       player.nativeControls.update(

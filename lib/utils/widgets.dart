@@ -1,22 +1,3 @@
-/* 
- *  This file is part of Harmonoid (https://github.com/harmonoid/harmonoid).
- *  
- *  Harmonoid is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *  
- *  Harmonoid is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- *  GNU General Public License for more details.
- *  
- *  You should have received a copy of the GNU General Public License
- *  along with Harmonoid. If not, see <https://www.gnu.org/licenses/>.
- * 
- *  Copyright 2020-2021, Hitesh Kumar Saini <saini123hitesh@gmail.com>.
- */
-
 import 'dart:io';
 import 'dart:async';
 import 'dart:math' as math;
@@ -85,7 +66,10 @@ class CustomListView extends StatelessWidget {
       );
     }
     if (HORIZONTAL_BREAKPOINT >
-        MediaQueryData.fromWindow(WidgetsBinding.instance!.window).size.width.normalized) {
+        MediaQueryData.fromWindow(WidgetsBinding.instance!.window)
+            .size
+            .width
+            .normalized) {
       scroller.addListener(
         () {
           var scrollDirection = scroller.position.userScrollDirection;
@@ -715,6 +699,7 @@ class ContextMenuButtonState<T> extends State<ContextMenuButton<T>> {
             Icon(
               FluentIcons.more_vertical_20_regular,
               size: 20.0,
+              color: Colors.red,
             ),
       ),
     );
@@ -748,7 +733,7 @@ class WindowTitleBar extends StatelessWidget {
                     width: 14.0,
                   ),
                   Text(
-                    'Harmonoid Music',
+                    'IMUSICX',
                     style: TextStyle(
                       color: Theme.of(context).brightness == Brightness.dark
                           ? Colors.white
